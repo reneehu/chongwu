@@ -1,0 +1,27 @@
+<div class="bgWrapper" ng-controller="loginController" style="height: 1500px; padding: 20px;">
+        <div class="container marketing">
+            <div class="formWrapper"
+                 style="padding: 50px; margin-left: 350px; margin-top: 300px; height: 200px; width: 400px;">
+                <form ng-submit="loginUser(user)">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <input type="text" placeholder="userName"  ng-model="user.userName" name="userName"
+                                   class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <input type="password" placeholder="Password"  ng-model="user.passWord" name="password"
+                                   class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+
+                    </div>
+                </form>
+
+            </div>
+      </div>
+  <div ng-show="message">{{message}}</div>
+</div>

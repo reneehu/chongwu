@@ -5,8 +5,10 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
   'myApp.view2',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  'myApp.version',
+  'loginModule',
+  'dogModule'
+])
+.config(['$httpProvider',function($httpProvider){
+    $httpProvider.interceptors.push('TokenInterceptor');
 }]);
