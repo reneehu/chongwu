@@ -9,6 +9,16 @@ angular.module('myApp', [
   'loginModule',
   'dogModule'
 ])
-.config(['$httpProvider',function($httpProvider){
+.config(['$httpProvider','$routeProvider',function($httpProvider,$routeProvider){
     $httpProvider.interceptors.push('TokenInterceptor');
+        $routeProvider.when('/listDog', {
+            templateUrl: 'dog/view/listDog.html'
+        }).when('/login', {
+            templateUrl: 'login/view/login.html'
+        });
 }]);
+
+angular.module('loginModule', ['ngRoute','ngCookies']);
+angular.module('dogModule', ['ngRoute','ngCookies'])
+
+

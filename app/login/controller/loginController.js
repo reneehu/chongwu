@@ -10,6 +10,7 @@ angular.module('loginModule').controller('loginController',function($scope,$http
              if (event.data.status == "200") {
                  $cookieStore.put('token', event.data.responseBody.token);
                  $cookieStore.put('uerLoginStatus', true);
+                 $location.path('/listDog');
              }
              else {
                  $scope.message = "You username or password is wrong!";
