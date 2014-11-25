@@ -1,27 +1,46 @@
-<div class="bgWrapper" ng-controller="loginController" style="height: 1500px; padding: 20px;">
-        <div class="container marketing">
-            <div class="formWrapper"
-                 style="padding: 50px; margin-left: 350px; margin-top: 300px; height: 200px; width: 400px;">
-                <form ng-submit="loginUser(user)">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <input type="text" placeholder="userName"  ng-model="user.userName" name="userName"
-                                   class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <input type="password" placeholder="Password"  ng-model="user.passWord" name="password"
-                                   class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+<div ng-controller="loginController">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Find your dog family here</a>
+        </div>
+        <div ng-hide="signinFlag">
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right" role="form" ng-submit="loginUser(user)">
+                <div class="form-group">
+                    <input type="text" placeholder="Username" class="form-control"  ng-model="user.userName">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-control"  ng-model="user.passWord">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+        </div><!--/.navbar-collapse -->
+        </div>
+        <div ng-show="signinFlag">
+            <button class="btn btn-success navbar-right" ng-click="logout()">Logout</button>
+        </div>
+    </div>
+ </nav>
+</div>
 
-                    </div>
-                </form>
-
-            </div>
-      </div>
-  <div ng-show="message">{{message}}</div>
+<div class="container row">
+<div ng-controller="dogController">
+    <ul class="list-group">
+      <li>
+         <div ng-repeat="dog in dogList">
+             <span>haha</span>
+            <span>{{dog.dogName}}</span>
+            <span>{{dog.dogAge}}</span>
+            <span><img ng-src="{{dog.dogImageUrl}}" height="122" width="122"></span>
+           </div>
+       </li>
+     </ul>
+</div>
 </div>

@@ -16,7 +16,12 @@ angular.module('myApp', [
         }).when('/login', {
             templateUrl: 'login/view/login.html'
         });
-}]);
+}])
+    .run(function($cookieStore, $location){
+       if($cookieStore.get('uerLoginStatus')!=true){
+           $location.path('/login');
+       }
+    });
 
 angular.module('loginModule', ['ngRoute','ngCookies']);
 angular.module('dogModule', ['ngRoute','ngCookies'])
