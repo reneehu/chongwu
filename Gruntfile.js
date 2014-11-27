@@ -11,7 +11,7 @@ module.exports = function(grunt){
 //    grunt.loadNpmTasks("grunt-contrib-clean");
 //
 //    grunt.registerTask("default",['clean']);
-    grunt.registerTask('heroku:production', 'clean less mincss uglify');
+//   grunt.registerTask('heroku:production', 'clean less mincss uglify');
 
 
 };
