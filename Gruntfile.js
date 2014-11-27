@@ -8,7 +8,10 @@ module.exports = function(grunt){
     pkg: grunt.file.readJSON('node_modules/grunt/package.json')
   });
 
-    grunt.loadNpmTasks("grunt-contrib-clean");
+//    grunt.loadNpmTasks("grunt-contrib-clean");
+//
+//    grunt.registerTask("default",['clean']);
+    grunt.registerTask('heroku:production', 'clean less mincss uglify');
 
-    grunt.registerTask("default",['clean']);
+
 };
