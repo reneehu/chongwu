@@ -4,17 +4,18 @@
 /**
  * Created by michaelzhao007 on 11/17/2014.
  */
-angular.module('loginModule').controller('loginController',function($scope,$http,loginFactory,$cookieStore,$location) {
+angular.module('loginModule').controller('loginController',function($scope,$http,loginFactory,$cookieStore,$location,alert) {
     $scope.signinFlag = $cookieStore.get('uerLoginStatus');
     $scope.loginUser = function(user){
-         loginFactory.login(user).then(function(event) {
-             if (event.data.status == "200") {
-                 $cookieStore.put('token', event.data.responseBody.token);
+         loginFactory.login(user).then(function(data) {
+             if (data.status == "200") {
+                 $cookieStore.put('token',data.responseBody.token);
                  $cookieStore.put('uerLoginStatus', true);
                  $scope.signinFlag = true;
+                 alert('success ','ok! ','You are now logged in!');
              }
              else {
-                 $scope.message = "You username or password is wrong!";
+                 alert('warning','Opps',' Your username or password is wrong!');
              }
          });
 

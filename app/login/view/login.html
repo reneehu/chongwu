@@ -28,19 +28,29 @@
         </div>
     </div>
  </nav>
-</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="alert aler-[{alert.type}] animated main-alert pull-right" ng-class="{'flipInY':alert.show,'flipOutY':!alert.show, 'alert-hidden':!alert.hasBeenShown}"><strong>{{alert.title}}</strong>{{alert.message}}</div>
 
-<div class="container row">
+</div>
+<br>
+ <br>
+        <br>
+<div class="container">
 <div ng-controller="dogController">
-    <ul class="list-group">
+    <div clas="row">
+    <ul class="liststrap">
       <li>
-         <div ng-repeat="dog in dogList">
-             <span>haha</span>
-            <span>{{dog.dogName}}</span>
+         <div  ng-repeat="dog in dogList">
+             <span><img ng-src="{{dog.dogImageUrl}}" height="122" width="122" class="img-circle"></span>
+             <span>{{dog.dogName}}</span>
             <span>{{dog.dogAge}}</span>
-            <span><img ng-src="{{dog.dogImageUrl}}" height="122" width="122"></span>
            </div>
        </li>
      </ul>
+  </table>
+        </div>
 </div>
 </div>
