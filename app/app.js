@@ -3,8 +3,6 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
   'myApp.version',
   'loginModule',
   'dogModule'
@@ -13,13 +11,13 @@ angular.module('myApp', [
     $httpProvider.interceptors.push('TokenInterceptor');
         $routeProvider.when('/listDog', {
             templateUrl: 'dog/view/listDog.html'
-        }).when('/login', {
-            templateUrl: 'login/view/login.html'
+        }).when('/', {
+            templateUrl: 'search/view/search.html'
         });
 }])
     .run(function($cookieStore, $location){
        if($cookieStore.get('uerLoginStatus')!=true){
-           $location.path('/login');
+           $location.path('/');
        }
     });
 

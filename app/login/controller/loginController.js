@@ -12,6 +12,7 @@ angular.module('loginModule').controller('loginController',function($scope,$http
                  $cookieStore.put('token',data.responseBody.token);
                  $cookieStore.put('uerLoginStatus', true);
                  $scope.signinFlag = true;
+                 $location.path('/listDog');
                  alert('success ','ok! ','You are now logged in!');
              }
              else {
@@ -25,6 +26,7 @@ angular.module('loginModule').controller('loginController',function($scope,$http
         $cookieStore.remove("token");
         $cookieStore.remove("uerLoginStatus");
         $scope.signinFlag = false;
+        $location.path('/');
     };
 
 

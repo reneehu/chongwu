@@ -1,11 +1,13 @@
-<div class="bgWrapper" ng-controller="dogController" style="height: 1500px; padding: 20px;">
-    <div class="container marketing">
-        <div ng-show="message">{{message}}</div>
-        <div ng-repeat="dog in dogList">
-          <span>{{dog.dogName}}</span>
-          <span>{{dog.dogAge}}</span>
-          <span><img ng-src="{{dog.dogImageUrl}}"></span>
-        </div>
+<login-bar></login-bar>
 
+<div class="bgWrapper" ng-controller="dogController" style="height: 1500px; padding: 20px;">
+<div class="container marketing">
+    <div ng-show="message">{{message}}</div>
+    <div ng-repeat="dog in dogList">
+        <span>{{dog.dogName}}</span>
+        <span>{{dog.dogAge}}</span>
+        <span><img ng-src="{{dog.dogImageUrl}}"></span>
     </div>
+
+</div>
 </div>
